@@ -34,7 +34,7 @@ public class TranslateController {
             model.addAttribute("resultText", resultText);
             model.addAttribute("separator", separator);
         } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
         return "base";
     }

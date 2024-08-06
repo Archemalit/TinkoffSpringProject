@@ -1,5 +1,6 @@
 package com.archemalt.TinkoffSpringProject.service.Impl;
 
+import com.archemalt.TinkoffSpringProject.dto.TranlateText;
 import com.archemalt.TinkoffSpringProject.repository.TranslateRepository;
 import com.archemalt.TinkoffSpringProject.service.TranslateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +38,7 @@ public class TranslateServiceImpl implements TranslateService {
             repository.saveResult(ip, srcLanguage, resultLanguage, text, resultText.toString());
             return resultText.toString();
         } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
     }
 }

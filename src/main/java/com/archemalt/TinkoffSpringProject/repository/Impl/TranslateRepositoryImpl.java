@@ -43,7 +43,7 @@ public class TranslateRepositoryImpl implements TranslateRepository {
     private String password;
 
     @PostConstruct
-    private void checkConnectionSsl() {
+    private void checkConnection() {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setUsername(username);
         hikariConfig.setPassword(password);
@@ -54,9 +54,8 @@ public class TranslateRepositoryImpl implements TranslateRepository {
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement stmt = connection.prepareStatement(SQL_CREATE_TABLE_INFO);
             stmt.executeUpdate();
-            System.out.println("Connection was successful");
         } catch (SQLException e) {
-            System.out.println("Connection failed");
+            throw new IllegalArgumentException(e);
         }
     }
     @Override
@@ -70,7 +69,7 @@ public class TranslateRepositoryImpl implements TranslateRepository {
             stmt.setString(5, resultText);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Connection failed");
+            throw new IllegalArgumentException(e);
         }
     }
 }

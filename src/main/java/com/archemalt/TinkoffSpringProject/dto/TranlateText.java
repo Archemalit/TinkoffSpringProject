@@ -1,4 +1,4 @@
-package com.archemalt.TinkoffSpringProject.service.Impl;
+package com.archemalt.TinkoffSpringProject.dto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.Callable;
 
-class TranlateText implements Callable<String> {
+public class TranlateText implements Callable<String> {
     private String url;
     private RestTemplate restTemplate;
     private ObjectMapper mapper;
@@ -28,10 +28,10 @@ class TranlateText implements Callable<String> {
                 String responseBody = root.get(0).get(0).get(0).asText();
                 return responseBody;
             } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
+                throw new IllegalArgumentException(e);
             }
         } else {
-            return "Error" + response.getStatusCode();
+            throw new IllegalArgumentException("Error" + response.getStatusCode());
         }
     }
 }
