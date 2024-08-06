@@ -3,6 +3,7 @@
 ```My contacts: Telegram: @kiz_zyaka```
 ___
 __Project database schema:__
+
 ![ER-diagram](https://github.com/Archemalit/TinkoffSpringProject/blob/develop/database.jpg)
 ___
 # Installation
