@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fa;
+}
+.container {
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #efdb2c;
+    padding: 30px;
+}
+h1 {
+    color: #000000;
+}
+.btn-translate {
+    background-color: #000000;
+    color: #f8f9fa;
+}
+.btn-translate:hover {
+    background-color: #f8f9fa;
+}
+.result-box {
+    min-height: 100px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half {
+    width: 39%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.half-separator {
+    width: 20%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
